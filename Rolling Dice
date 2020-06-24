@@ -1,0 +1,55 @@
+#The Rolling dice
+
+   def roll_dice(): 
+   
+       import random
+       print ("Welcome to my dice game!")
+       print ("Here's the game menu:") 
+       print("1: set limits") 
+       print("2: set amount of dice") 
+       print("3: roll dice") 
+       print("4: end game")
+ 
+  choice = 0 
+  min_value = 1 # a normal dice has 1 as minimum
+  max_value = 6 # a normal dice has 6 as maximum 
+  amount = 1 # amount of dice 
+  
+  while True:
+   choice = int(input('What would you like to do? (Press "4" for the game menu)')) #get input from user
+   if choice ==1: 
+   try: #try to get values from user 
+      min_value = 0 
+      max_value = 0 
+      
+  while min_value >= max_value: 
+             min_value = int(input("Enter the minimum value of the die: ")) 
+             max_value = int(input("Enter the maximum value of the die: ")) 
+   except: #anything other than numbers, restarts
+   
+   print("I will just use 1-6") #tells instructions 
+   min_value = 1 # dice has 1 as minimum 
+   max_value = 6 # dice has 6 as maximum 
+   
+   elif choice == 2: 
+          amount = int(input('Enter the amount of the dice you want: '))
+   elif choice == 3: 
+          usage = amount #I did this to be able to keep the amount
+    while usage > 0: # number of dice they want 
+    
+    print(random.randint(min_value, max_value)) # print a value 
+    usage -= 1 #reduce the amount left to print 
+    
+   elif choice == 4: #just print the menu again 
+   
+      print ("Here's the game menu:") 
+      print("1: set limits") 
+      print("2: set amount of dice") 
+      print("3: roll dice") 
+      print("4: restart game") 
+      print("5: stop playing") 
+      
+   elif choice == 5: 
+          break 
+  else: # if they enter an invalid input 
+  print ('Please choose one of the 5 (1, 2, 3, 4, 5) options. Press "4" for the game menu') #Tell then what they need to doroll_dice()
